@@ -1,0 +1,388 @@
+body{
+ 
+   overflow-x: hidden;
+   background: #E5E5E5; 
+	font-family: arial, verdana, tahoma;
+	font-size: 14px;
+
+
+}
+
+
+
+
+/********************
+*    niv bar        *
+*********************/
+.navbar{background:#b33939; border-radius: 0;}
+.nav-item::after{content:'';display:block;width:0px;height:2px;background:#fff;transition: 0.2s; font-size: 1em;}
+.nav-item:hover::after{width:100%;font-size: 1em;}
+.navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.active,
+ .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show > .nav-link,
+ .navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover{color:#fff;font-size: 1em;}
+.nav-link{padding:15px 5px;transition:0.2s;font-size: 1em;}
+.dropdown-item.active, .dropdown-item:active{color:#b33939;font-size: 1em;}
+.dropdown-item:focus, .dropdown-item:hover{background:#fff;font-size: 1em;}
+
+
+
+/*satart login form*/
+.text-center{
+	color: #b33939;
+}
+
+.formT{
+	font-weight: bold;
+}
+
+.login{
+	width: 320px;
+	margin:100px auto;
+}
+.login input {
+	margin-bottom:10px; 
+
+}
+
+.login .form-control{
+     background-color: #E5E5E5;
+}
+.login .btn{
+	background-color: #b33939;
+	border: 1px solid #b33939;
+	color:#E5E5E5;
+}
+
+.login .btn:hover{
+	box-shadow: 3px 4px 10px #b33939;
+}
+
+/*end login form*/
+
+
+
+
+/********************
+*    advertisment   *
+*********************/
+.container {
+   
+	position: relative;
+	overflow: hidden;
+	width: 400vw;
+	height: 30vh;
+}
+.container .slider {
+	position: absolute;
+	left: 0;
+	width: 500%;
+	height:100%;
+	animation: animate 10s linear infinite;
+}
+.container .slider .slide {
+	position: relative;
+	top: 20px;
+	width: 20%;
+	height:100%;
+	float: left;
+}
+.container .slider .slide .caption { 
+	position: absolute;
+	top:20px;
+	bottom: 60px;
+	right: 60px;
+	left: 60px;
+	padding: 30px;
+	background-color: rgba(0,0,0,.5);
+	box-sizing:border-box;
+	transition: 0.5s;
+}
+.container .slider .slide .caption h2 { 
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	font-size: 48px;
+	transition: 0.5s;
+}
+.container .slider .slide .caption p { 
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	font-size: 18px;
+	transition: 0.5s;
+}
+.container .slider .slide.slide1 {
+	background: url(https://www.planwallpaper.com/static/images/47141475-hd-wallpapers.jpg);
+	background-size: cover;
+	background-position: center;
+}
+.container .slider .slide.slide2 {
+	background: url(https://www.planwallpaper.com/static/images/963840d34c51efe6fbe57749fb434646.jpg);
+	background-size: cover;
+	background-position: center;
+}
+.container .slider .slide.slide3 {
+	background: url(https://www.planwallpaper.com/static/images/HD-Wallpapers-B1.jpg);
+	background-size: cover;
+	background-position: center;
+}
+.container .slider .slide.slide4 {
+	background: url(https://www.planwallpaper.com/static/images/beach-cool-wallpaper-hd_1_tKvqLtf.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+
+@keyframes animate {
+	0% {
+		left: 0;
+	}
+	20% {
+		left: 0;
+	}
+	25% {
+		left: -100%;
+	}
+	45% {
+		left: -100%;
+	}
+	50% {
+		left: -200%;
+	}
+	70% {
+		left: -200%;
+	}
+	75% {
+		left: -300%;
+	}
+	95% {
+		left: -300%;
+	}
+	100% {
+		left: -400%;
+	}
+}
+
+
+
+@media screen and (max-width: 768px) {
+	.container .slider .slide .caption { 
+		bottom: 20px;
+		right: 20px;
+		left: 20px;
+		padding: 20px;
+	}
+	.container .slider .slide .caption h2 { 
+		margin: 0 0 10px;
+		font-size: 30px;
+	}
+	.container .slider .slide .caption p { 
+		font-size: 16px;
+	}
+}
+
+
+/********************
+*    stors          *
+*********************/
+
+* {
+    margin: 0; 
+	padding: 0;
+}
+
+
+/*Time to apply widths for accordian to work
+Width of image = 640px
+total images = 5
+so width of hovered image = 640px
+width of un-hovered image = 40px - you can set this to anything
+so total container width = 640 + 40*4 = 800px;
+default width = 800/5 = 160px;
+*/
+
+.accordian {
+	
+	width: 150em; height: 220px;
+	overflow: hidden;
+	
+	/*Time for some styling*/
+	margin: 100px auto;
+	box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+	-webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+	-moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+}
+
+/*A small hack to prevent flickering on some browsers*/
+.accordian ul {
+	top:-10em;
+	width: 1200px;
+	/*This will give ample space to the last item to move
+	instead of falling down/flickering during hovers.*/
+}
+
+.accordian li {
+	top:-10em;
+	position: relative;
+	display: block;
+	width: 160px;
+	float: left;
+	
+	border-left: 1px solid #888;
+	
+	box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+	
+	/*Transitions to give animation effect*/
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	/*If you hover on the images now you should be able to 
+	see the basic accordian*/
+}
+
+/*Reduce with of un-hovered elements*/
+.accordian ul:hover li {width: 40px;}
+/*Lets apply hover effects now*/
+/*The LI hover style should override the UL hover style*/
+.accordian ul li:hover {width: 640px;}
+
+
+.accordian li img {
+	display: block;
+}
+
+/*Image title styles*/
+.image_title {
+	background: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	left: 0; bottom: 0;	
+width: 640px;	
+
+}
+.image_title a {
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	padding: 20px;
+	font-size: 16px;
+}
+
+/********************
+*   products          *
+*********************/
+
+
+        .product_view .modal-dialog{max-width: 800px; width: 100%;}
+        .pre-cost{text-decoration: line-through; color: #a5a5a5;}
+        .space-ten{padding: 10px 0;}
+
+
+
+ 
+/********************
+*   footer          *
+*********************/
+
+ .footer{
+    color: white;
+    position: relative;
+    
+    background-color: #b33939;
+    background: linear-gradient(20deg,#fff,black,#b33939); /*Change colors as you want*/
+    background-size: 1000% 1000% !important;
+    -webkit-animation: changeColors 20s ease infinite;
+    -moz-animation: changeColors 20s ease infinite;
+    -o-animation: changeColors 20s ease infinite;
+    animation: changeColors 20s ease infinite;
+    z-index: 5;
+}
+
+@-webkit-keyframes changeColors {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+
+
+.social:hover {
+     -webkit-transform: scale(1.1);
+     -moz-transform: scale(1.1);
+     -o-transform: scale(1.1);
+ }
+ .social {
+     -webkit-transform: scale(0.8);
+     /* Browser Variations: */
+     
+     -moz-transform: scale(0.8);
+     -o-transform: scale(0.8);
+     -webkit-transition-duration: 0.5s;
+     -moz-transition-duration: 0.5s;
+     -o-transition-duration: 0.5s;
+ }
+
+/*
+    Multicoloured Hover Variations
+*/
+ 
+ #social-fb:hover {
+     color: #555;
+ }
+ #social-tw:hover {
+     color: #fff;
+ }
+ #social-gp:hover {
+     color: #555;
+ }
+ #social-em:hover {
+     color: #fff;
+ }
+
+
+
+
+.links a,
+.links a:visited,
+.links a:focus
+
+{
+margin: 0;
+	
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eaefb5+0,e1e9a0+100;Wax+Flat */
+background: #fff; /* Old browsers */
+background: -moz-linear-gradient(top, #fff 0%, #fff 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #fff 0%,#e1e9a0 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #eaefb5 0%,#e1e9a0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#fff',GradientType=0 ); /* IE6-9 */
+
+	
+}
+
+table, th, td {
+   
+    border-collapse: collapse;
+}
+th, td {
+    padding: 15px;
+}
+td {
+    text-align: center;
+	color: #fff;
+}
+table {
+    border-spacing: 5px;
+}
+#justpushtobottom {
+    height: 82vh;
+}
+
+
+

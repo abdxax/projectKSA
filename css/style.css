@@ -1,0 +1,34 @@
+*{
+	margin: 0 px;
+	padding:0 px;
+}
+
+body{
+	direction: ltr;
+	
+}
+
+.r{
+	float: left;
+}
+.l{
+	float: right;
+}
+.c{
+	clear: both;
+}
+.w{
+	width: 1000px;
+	margin: 0px auto;
+}
+
+/* header style */
+.headerTop{
+
+  background-repeat: repeat-x;
+  
+}
+
+.logo{
+	
+}
