@@ -139,7 +139,7 @@ function get_pro_cat(){
 				echo '<li>
         <div class="product">
           <div id="pro_img">
-            <a href="#"><img src="admin/images/'.$row_pro_cat['p_img'].'" width="300" height="250px" /></a>
+            <a href="#"><img src="images/'.$row_pro_cat['p_img'].'" width="300" height="250px" /></a>
           </div>
           <div id="pro_title">
             <a href="#">'.$row_pro_cat['p_title'].'</a>

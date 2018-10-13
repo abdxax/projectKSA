@@ -1,5 +1,5 @@
 <?php
-include "inc/cookie.php";
+//include "inc/cookie.php";
 
  $db = mysqli_connect('localhost','root','','traditionhere');
 ?>

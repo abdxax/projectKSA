@@ -29,14 +29,18 @@ if (isset($_FILES['p_img'])) {
  $type=$_FILES['p_img']['type'];
  $tem=$_FILES['p_img']['tmp_name'];
  $size=$_FILES['p_img']['size'];
- $p_title=@$_POST['p_title'];
-$p_category=@$_POST['p_category'];
-$p_img=@$_FILES['p_img']['proImages'];
-$p_img_tmp=@$_FILES['p_img']['tmp_name'];
-$p_price=@$_POST['p_price'];
-$p_desc=@$_POST['p_desc'];
-$p_keyword=@$_POST['p_keyword'];
- $path="../images/".$names;
+ $p_title=$_POST['p_title'];
+$p_category=$_POST['p_category'];
+//$p_img=$_FILES['p_img']['proImages'];
+$p_img_tmp=$_FILES['p_img']['tmp_name'];
+$p_price=$_POST['p_price'];
+$p_desc=$_POST['p_desc'];
+$p_keyword=$_POST['p_keyword'];
+$arex=array("jpg","png");
+$expload=explode('.', $names);
+$end=strtolower($expload[1]);
+if (in_array($end, $arex)) {
+  $path="../images/".$names;
  if (move_uploaded_file($tem, $path)) {
    $insert_pro = "INSERT INTO product(p_title,p_category,p_img,p_price,p_desc,p_keyword)values('$p_title','$p_category','$path','$p_price','$p_desc','$p_keyword')";
   $run_pro= mysqli_query($db,$insert_pro);
@@ -46,8 +50,13 @@ $p_keyword=@$_POST['p_keyword'];
  }
 }
 else{
-  echo "string";
+  echo "Not support ";
 }
+}
+else{
+  echo "";
+}
+ 
 ?>
 
 <div class ="adminBodyy">
